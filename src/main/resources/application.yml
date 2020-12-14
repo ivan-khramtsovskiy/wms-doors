@@ -1,0 +1,16 @@
+app:
+  name: WMS-Doors
+  title: Дверей дешевле не бывает!
+  author: Фамилия Имя Отчество
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/wms_doors?serverTimezone=Europe/Moscow
+    username: wms_doors_admin
+    password: 12345
+
+server:
+  port: 8080

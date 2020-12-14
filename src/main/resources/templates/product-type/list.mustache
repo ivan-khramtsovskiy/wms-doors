@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+{{>fragments/dictionary-header}}
+<div class="container">
+    <p><br>
+        <a href="/product-type/create" class="btn btn-primary" role="button">Добавить запись</a>
+    </p>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Тип номенклатуры</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#productType}}
+        <tr>
+            <th scope="row">{{#id}}{{id}}{{/id}}</th>
+            <td>{{#name}}{{name}}{{/name}}</td>
+            <td><a href="/product-type/update/{{id}}">Изменить</a></td>
+            <td><a href="/product-type/delete/{{id}}">Удалить</a></td>
+        </tr>
+        {{/productType}}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

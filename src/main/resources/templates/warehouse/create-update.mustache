@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+{{>fragments/create-edit-header}}
+<div class="container">
+    <div>
+        <form action="{{#isUpdate}}/warehouse/update/{{warehouse.id}}{{/isUpdate}}{{^isUpdate}}/warehouse/create{{/isUpdate}}"
+              name="warehouse" method="post">
+            <table class="table">
+                <tbody>
+                <thead>
+                <tr>
+                    <th>Поле</th>
+                    <th>Значение</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#isUpdate}}
+                <tr>
+                    <td>ID</td>
+                    <td><div name="id">{{warehouse.id}}</div></td>
+                </tr>
+                {{/isUpdate}}
+                <tr>
+                    <th>Адрес</th>
+                    <td><input type="text" name="address" value="{{#warehouse.address}}{{warehouse.address}}{{/warehouse.address}}" /></td>
+                </tr>
+                <tr>
+                    <th>Описание</th>
+                    <td><input type="text" name="description" value="{{#warehouse.description}}{{warehouse.description}}{{/warehouse.description}}" /></td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

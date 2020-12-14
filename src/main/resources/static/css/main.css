@@ -1,0 +1,355 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200);
+
+* { -webkit-font-smoothing:antialiased; -moz-font-smoothing:antialiased; -ms-font-smoothing:antialiased; -o-font-smoothing:antialiased; font-smoothing:antialiased; }
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+
+body{
+  margin:0px;
+  padding:0px;
+	font-family: "Open Sans", arial;
+	background:#0f6d39;
+	color:#fff;
+	font-weight:300;
+}
+
+hr {
+    background-color: #fff;
+    height: 1px;
+}
+
+h1{
+	font-family: "Open Sans", arial;
+	font-weight:300;
+	float: left;
+	width: 55%;
+	margin-left: 5px;
+	font-size: 40px;
+	margin: 0.5em auto;
+}
+h2{
+	margin:0px;
+	font-family: "Open Sans", arial;
+	font-weight:300;
+}
+.container{
+	width: 1251px;
+    margin-left:10px;
+	-webkit-transform:scale(0.9);
+}
+a.wide, a.box{
+	text-decoration:none;
+	color:#fff;
+	-webkit-transition: -webkit-transform 0.1s;
+	position:relative;
+	overflow:hidden;
+}
+
+a.wide h2, a.box h2{
+	position:absolute;
+	bottom:5px;
+	font-size:14px;
+}
+
+a.wide h2.top, a.box h2.top{
+	position:static;
+
+	font-size:14px;
+}
+a.wide i, a.box i{
+font-size: 60px;
+text-align: center;
+display: block;
+margin-top: 10px; /* outside Codepen is actually 30px */
+}
+a.wide:hover, a.box:hover{
+	-webkit-transform: scale(1.05);
+}
+
+a.wide:active, a.box:active{
+	-webkit-transform: scale(1);
+}
+.wide{
+	width:270px;
+	height:120px;
+	overflow:hidden;
+	font-size:13px;
+	padding:10px;
+	display:block;
+	float:left;
+	margin:5px;
+}
+
+.box{
+	width:120px;
+	height:120px;
+	overflow:hidden;
+	font-size:13px;
+	padding:10px;
+	display:block;
+	float:left;
+	margin:5px;
+}
+.lime{background:#61b812;}
+.orange{background:#e76022;}
+.blue{background:#1E90FF;}
+.redgay{background:#DA312E;}
+.yellow{background:#dbb701;}
+.bluefish{background:#02b9e3;}
+.magenta{background:#d22a4e;}
+.spacer{
+	width:770px;
+	margin-right: 50px;
+	float:left;
+}
+.spacer3x{
+	width:300px;
+}
+
+@-webkit-keyframes galeri
+{
+1% {background-position: 0px 0px;}
+10%{background-position: 0px 140px;}
+20%{background-position: 0px 140px;}
+30%{background-position: 0px 280px;}
+40%{background-position: 0px 280px;}
+50%{background-position: 0px 420px;}
+60%{background-position: 0px 420px;}
+70%{background-position: 0px 560px;}
+80%{background-position: 0px 560px;}
+100% {background-position: 0px 560px;}
+}
+
+.gallery{
+	background: url(https://dl.dropbox.com/u/39272011/image_metro.png);
+	-webkit-animation: galeri 15s infinite;
+}
+.right{
+	float:right;
+	text-align:right;
+	margin-top: 30px;
+}
+.right p{
+	margin: 5px 0px;
+}
+img.prof{
+	float: right;
+	margin: 10px;
+	margin-top: 40px;
+}
+.i_bot{
+	font-size: 30px;
+	text-align: left;
+	position: absolute;
+	bottom: 0px;
+}
+.cal_i{
+	margin-top: 20px;
+	margin-left: 15px;
+	width: 155px;
+}
+.cal_e h1{
+	position: absolute;
+	right: 0px;
+	width: 115px;
+	text-align: center;
+	margin: 0px;
+	font-size: 60px;
+}
+.cal_e p{
+	position: absolute;
+	right: 0px;
+	width: 115px;
+	text-align: center;
+	margin-top: 75px;
+	text-transform: uppercase;
+}
+.cal_e i{
+	text-align: left;
+	font-size: 25px !important;
+	position: absolute;
+	bottom: 0px;
+}
+
+/*** NEW ***/
+
+.wrap,.wrap2{
+	height: auto;
+	float: left;
+}
+.wrap2{
+	width: 410px !important;
+}
+div[class^="metro"]{
+	float: left;
+	margin: 0 10px 10px 0;
+	height: 95px;
+	position: relative;
+	cursor: pointer;
+	transition: all .4s ease;
+  user-drag: element;
+  border: solid 2px transparent;
+}
+div[class^="metro"]:hover{
+	border: solid 2px mintcream;
+}
+div[class^="metro"]:active{
+	transform: scale(.98,.98);
+}
+.metro-big{width: 200px;}
+.metro-small{width: 95px;}
+.last{margin-right: 0 !important;}
+.Start{
+	color: white;
+	font: normal 50px 'Yanone Kaffeesatz', sans-serif;
+	margin-bottom: 50px;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  transition: all .3s ease;
+}
+.Start:hover{
+  text-shadow: 0 0 4px white;
+}
+.space{
+	margin-bottom: 110px;
+}
+.label{
+	position: absolute;
+	color: white;
+	font: 500 12px sans-serif;
+	left: 10px;
+  user-select: none;
+}
+.bottom{bottom: 5px;}
+.top{top: 5px;}
+.chat{background: #df0024;}
+.calendar{
+  background: #00a9ec;
+}
+
+.store{background: #ff9000;}
+
+.ie{background: #00abdc;}
+.people{background: #0e5d30;}
+.video{background: #8b0189;}
+.chrome{background: #ce4e4e;}
+.photo{
+  background: url('http://lorempixel.com/200/95/people');
+  background-position: -2px -2px;
+}
+.music{
+  background: #5f5f5f;
+  animation: flip 6s linear infinite;
+  transform: rotateX(0deg);
+}
+.games{background: #00ff00;}
+.twitter{background: #19bfe5;}
+.gp{background: #d64136;}
+.fb{background: #3b5998;}
+.cnn{background: #fe0000;}
+.ps{background: #0c5fa1;}
+.bt{background: #2546e9;}
+.cc{background: #d20808;}
+.wmp{background: #f68935;}
+.tube{background: #c8312b;}
+.skype{background: #10bef2;}
+
+div[class^="icon"]{
+	width: 45px;
+	height: 45px;
+	margin: 20px auto;
+	background-size: 45px 45px;
+}
+.icon-calendar{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Apps-Calendar-Metro-icon.png');}
+.icon-chat{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Other-Mail-alt-Metro-icon.png');}
+.icon-store{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Microsoft-Store-Metro-icon.png');}
+.icon-ie{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Browsers-Internet-Explorer-10-Metro-icon.png');}
+.icon-people{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Folders-OS-User-No-Frame-Metro-icon.png');}
+.icon-video{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Folders-OS-My-Videos-Metro-icon.png');}
+.icon-chrome{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Browsers-Google-Chrome-Metro-icon.png');}
+.icon-music{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Apps-Google-Music-Metro-icon.png');}
+.icon-games{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Folders-OS-Games-alt-Metro-icon.png');}
+.icon-twitter{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Web-Twitter-alt-2-Metro-icon.png');}
+.icon-gp{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Web-Google-plus-Metro-icon.png');}
+.icon-fb{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Web-Facebook-alt-1-Metro-icon.png');}
+.icon-cnn{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Web-CNN-Metro-icon.png');}
+.icon-ps{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Apps-Adobe-Photoshop-Metro-icon.png');}
+.icon-bt{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Apps-Bluetooth-Metro-icon.png');}
+.icon-cc{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Apps-CCleaner-Metro-icon.png');}
+.icon-wmp{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Apps-Windows-Media-Player-Metro-icon.png');}
+.icon-tube{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-YouTube-alt-1-Metro-icon.png');}
+.icon-skype{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Apps-Skype-Metro-icon.png');}
+.icon-excel{background: url('/icons/excel.png');}
+.icon-warehouse{background: url('/icons/warehouse.png');}
+::-webkit-scrollbar{
+  width: 10px;
+	height: 10px;
+	cursor: pointer;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px 2px rgba(0,0,0,0.3);
+    background: #007491;
+}
+::-webkit-scrollbar-thumb {
+    background: #002f3b;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+::selection{
+    background: mintcream;
+}
+
+@keyframes flip{
+  0%{
+    transform: rotateX(0deg);
+  }
+  15%{
+    transform: rotateX(360deg);
+  }
+  100%{
+    transform: rotateX(360deg);
+  }
+}
+
+.photo img{
+  top: -4px;
+  left: -4px;
+  position: absolute;
+  opacity: 0;
+  animation: fade 8s ease-in-out infinite 8s;
+  z-index: 0;
+  border: solid 2px transparent;
+  transition: all .3s ease;
+}
+
+.photo img:hover{
+  border: solid 2px mintcream;
+}
+
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 1;
+  }
+  60%{
+    opacity: 0;
+  }
+}
