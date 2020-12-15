@@ -353,3 +353,7 @@ div[class^="icon"]{
     opacity: 0;
   }
 }
+
+.card-button {
+    display:flex;justify-content:center;align-items:center;
+}
