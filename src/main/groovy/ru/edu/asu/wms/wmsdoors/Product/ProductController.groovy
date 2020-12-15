@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import ru.edu.asu.wms.wmsdoors.ProductType.ProductType
 import ru.edu.asu.wms.wmsdoors.ProductType.ProductTypeService
+import ru.edu.asu.wms.wmsdoors.Warehouse.Warehouse
 
 @Controller
 class ProductController {
@@ -37,8 +38,14 @@ class ProductController {
 
     @GetMapping("/product/create")
     String createProductPage(Model model) {
-        model.addAttribute("product", new Product())
+        Product product = new Product()
+
+        List<ProductType> productTypes = productTypeService.getAllProductTypes()
+
+        model.addAttribute("product", product)
+        model.addAttribute("types", productTypes)
         model.addAttribute("isUpdate", false)
+
         return "product/create-update"
     }
 
