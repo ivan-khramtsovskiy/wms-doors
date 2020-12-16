@@ -34,10 +34,11 @@
                 <tr>
                     <th>Тип</th>
                     <td>
-                        <select class="form-select" aria-label="Default select" name="productType">
-                            <option selected value="3">Open this select menu</option>
+                        <select name="productType" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            {{#types}}
+                            <option value="{{id}}">{{name}}</option>
+                            {{/types}}
                         </select>
-                        <input type="text" name="description" value="{{#warehouse.description}}{{warehouse.description}}{{/warehouse.description}}" />
                     </td>
                 </tr>
                 </tbody>
