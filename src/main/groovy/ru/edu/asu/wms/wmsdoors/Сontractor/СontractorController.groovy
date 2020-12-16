@@ -15,7 +15,7 @@ class СontractorController {
 
     @GetMapping("/contractor")
     String getAllContractors(Model model) {
-        List<Сontractor> contractors = contractorService.getAllContractors()
+        List<Contractor> contractors = contractorService.getAllContractors()
         model.addAttribute("contractors", contractors)
         model.addAttribute("dictionaryHeader", "Контрагенты")
         return "contractor/list"
@@ -23,7 +23,7 @@ class СontractorController {
 
     @GetMapping("/contractor/create")
     String createContractorPage(Model model) {
-        Сontractor contractor = new Сontractor()
+        Contractor contractor = new Contractor()
         model.addAttribute("contractor", contractor)
         model.addAttribute("isUpdate", false)
         return "contractor/create-update"
@@ -31,7 +31,7 @@ class СontractorController {
 
     @GetMapping("/contractor/update/{id}")
     String updateContractorPage(Model model, @PathVariable("id") Integer id) {
-        Сontractor contractor = contractorService.getContractor(id)
+        Contractor contractor = contractorService.getContractor(id)
         model.addAttribute("contractor", contractor)
         model.addAttribute("isUpdate", true)
         return "contractor/create-update"
@@ -39,20 +39,20 @@ class СontractorController {
 
     @GetMapping("/contractor/{id}")
     String getContractor(Model model, @PathVariable("id") Integer id) {
-        Сontractor contractor = contractorService.getContractor(id)
+        Contractor contractor = contractorService.getContractor(id)
         model.addAttribute("contractor", contractor)
         model.addAttribute("dictionaryHeader", "Сведения о контрагенте")
         return "contractor/item"
     }
 
     @PostMapping("/contractor/update/{id}")
-    String createContractor(@ModelAttribute("contractor") Сontractor contractor, @PathVariable("id") Integer id) {
+    String createContractor(@ModelAttribute("contractor") Contractor contractor, @PathVariable("id") Integer id) {
         contractorService.updateContractor(contractor, id)
         return "redirect:/contractor"
     }
 
     @PostMapping("/contractor/create")
-    String createContractor(@ModelAttribute("contractor") Сontractor contractor) {
+    String createContractor(@ModelAttribute("contractor") Contractor contractor) {
         contractorService.createContractor(contractor)
         return "redirect:/contractor"
     }

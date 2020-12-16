@@ -8,12 +8,12 @@ class СontractorService {
     @Autowired
     private СontractorRepository contractorRepository
 
-    List<Сontractor> getAllContractors() {
+    List<Contractor> getAllContractors() {
         return contractorRepository.findAll()
     }
 
-    Сontractor updateContractor(Сontractor entity, Integer id) {
-        Сontractor val = contractorRepository.getOne(id)
+    Contractor updateContractor(Contractor entity, Integer id) {
+        Contractor val = contractorRepository.getOne(id)
         val.setInn(entity.getInn())
         val.setOgrn(entity.getOgrn())
         val.setName(entity.getName())
@@ -24,7 +24,7 @@ class СontractorService {
         return contractorRepository.save(val)
     }
 
-    Сontractor createContractor(Сontractor val) {
+    Contractor createContractor(Contractor val) {
         return contractorRepository.save(val)
     }
 
@@ -33,7 +33,7 @@ class СontractorService {
         return "Сведения о контрагенте удалены"
     }
 
-    Сontractor getContractor(Integer id) {
+    Contractor getContractor(Integer id) {
         return contractorRepository.getOne(id)
     }
 }

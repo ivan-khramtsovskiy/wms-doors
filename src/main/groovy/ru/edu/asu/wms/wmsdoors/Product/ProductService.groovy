@@ -19,10 +19,10 @@ class ProductService {
     }
 
     Product updateProduct(Product product, Integer id) {
-        Product whs = productRepository.getOne(id);
-        whs.setName(product.getName());
+        Product whs = productRepository.getOne(id)
+        whs.setName(product.getName())
         whs.setProductType(product.getProductType())
-        return productRepository.save(whs);
+        return productRepository.save(whs)
     }
 
     Product createProduct(Product product) {
@@ -30,8 +30,8 @@ class ProductService {
     }
 
     String deleteProduct(Integer id) {
-        productRepository.deleteById(id);
-        return "Сведения удалены";
+        productRepository.deleteById(id)
+        return "Сведения удалены"
     }
 
     Product getProduct(Integer id) {

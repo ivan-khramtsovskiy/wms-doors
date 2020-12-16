@@ -1,8 +1,7 @@
 package ru.edu.asu.wms.wmsdoors.Warehouse
-import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 
 @Service
 class WarehouseService {
@@ -14,10 +13,10 @@ class WarehouseService {
     }
 
     Warehouse updateWarehouse(Warehouse warehouse, Integer id) {
-        Warehouse whs = warehouseRepository.getOne(id);
-        whs.setAddress(warehouse.getAddress());
-        whs.setDescription(warehouse.getDescription());
-        return warehouseRepository.save(whs);
+        Warehouse whs = warehouseRepository.getOne(id)
+        whs.setAddress(warehouse.getAddress())
+        whs.setDescription(warehouse.getDescription())
+        return warehouseRepository.save(whs)
     }
 
     Warehouse createWarehouse(Warehouse warehouse) {
@@ -25,8 +24,8 @@ class WarehouseService {
     }
 
     String deleteWarehouse(Integer id) {
-        warehouseRepository.deleteById(id);
-        return "Сведения о складе удалены";
+        warehouseRepository.deleteById(id)
+        return "Сведения о складе удалены"
     }
 
     Warehouse getWarehouse(Integer id) {

@@ -13,9 +13,9 @@ class ProductTypeService {
     }
 
     ProductType updateProductType(ProductType productType, Integer id) {
-        ProductType whs = productTypeRepository.getOne(id);
-        whs.setName(productType.getName());
-        return productTypeRepository.save(whs);
+        ProductType whs = productTypeRepository.getOne(id)
+        whs.setName(productType.getName())
+        return productTypeRepository.save(whs)
     }
 
     ProductType createProductType(ProductType productType) {
@@ -23,8 +23,8 @@ class ProductTypeService {
     }
 
     String deleteProductType(Integer id) {
-        productTypeRepository.deleteById(id);
-        return "Сведения удалены";
+        productTypeRepository.deleteById(id)
+        return "Сведения удалены"
     }
 
     ProductType getProductType(Integer id) {

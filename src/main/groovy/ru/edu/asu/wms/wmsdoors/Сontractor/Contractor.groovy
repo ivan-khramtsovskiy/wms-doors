@@ -9,7 +9,7 @@ import javax.persistence.Id
 
 @Data
 @Entity
-class Сontractor {
+class Contractor {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id
@@ -22,20 +22,13 @@ class Сontractor {
     private String address
     private String email
 
-    Сontractor() {
+    Contractor() {
     }
 
     Integer getId() {
         return id
     }
 
-    String getEmail() {
-        return email
-    }
-
-    void setEmail(String email) {
-        this.email = email
-    }
 
     void setId(Integer id) {
         this.id = id
