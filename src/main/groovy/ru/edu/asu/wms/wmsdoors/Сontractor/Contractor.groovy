@@ -15,6 +15,14 @@ class Contractor {
     private Integer id
 
     private String inn
+
+    String getEmail() {
+        return email
+    }
+
+    void setEmail(String email) {
+        this.email = email
+    }
     private String ogrn
     private String name
     private String person

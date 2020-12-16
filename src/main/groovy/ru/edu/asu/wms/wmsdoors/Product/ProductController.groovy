@@ -47,6 +47,12 @@ class ProductController {
         return "product/create-update"
     }
 
+    @PostMapping("/product/create")
+    String createProduct(@ModelAttribute("product") Product product) {
+        productService.createProduct(product)
+        return "redirect:/product"
+    }
+
     @GetMapping("/product/update/{id}")
     String updateProductPage(Model model, @PathVariable("id") Integer id) {
         Product product = productService.getProduct(id)
@@ -68,11 +74,6 @@ class ProductController {
         return "redirect:/product"
     }
 
-    @PostMapping("/product/create")
-    String createProduct(@ModelAttribute("product") Product product) {
-        productService.createProduct(product)
-        return "redirect:/product"
-    }
 
     @GetMapping("/product/delete/{id}")
     String deleteProduct(@PathVariable("id") Integer id) {

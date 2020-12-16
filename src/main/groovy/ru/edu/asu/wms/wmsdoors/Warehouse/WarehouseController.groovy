@@ -29,6 +29,12 @@ class WarehouseController {
         return "warehouse/create-update"
     }
 
+    @PostMapping("/warehouse/create")
+    String createWarehouse(@ModelAttribute("warehouse") Warehouse warehouse) {
+        warehouseService.createWarehouse(warehouse)
+        return "redirect:/warehouse"
+    }
+
     @GetMapping("/warehouse/update/{id}")
     String updateWarehousePage(Model model, @PathVariable("id") Integer id) {
         Warehouse warehouse = warehouseService.getWarehouse(id)
@@ -36,16 +42,10 @@ class WarehouseController {
         model.addAttribute("isUpdate", true)
         return "warehouse/create-update"
     }
-    
+
     @PostMapping("/warehouse/update/{id}")
     String createWarehouse(@ModelAttribute("warehouse") Warehouse warehouse, @PathVariable("id") Integer id) {
         warehouseService.updateWarehouse(warehouse, id)
-        return "redirect:/warehouse"
-    }
-
-    @PostMapping("/warehouse/create")
-    String createWarehouse(@ModelAttribute("warehouse") Warehouse warehouse) {
-        warehouseService.createWarehouse(warehouse)
         return "redirect:/warehouse"
     }
 

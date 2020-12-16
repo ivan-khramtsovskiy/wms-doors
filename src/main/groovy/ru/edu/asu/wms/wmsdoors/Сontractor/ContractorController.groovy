@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 
 @Controller
-class СontractorController {
+class ContractorController {
     @Autowired
-    private СontractorService contractorService
+    private ContractorService contractorService
 
     @GetMapping("/contractor")
     String getAllContractors(Model model) {

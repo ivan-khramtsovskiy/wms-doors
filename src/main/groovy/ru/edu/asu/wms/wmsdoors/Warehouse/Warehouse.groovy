@@ -7,6 +7,9 @@ import javax.persistence.Id
 
 import lombok.Data
 
+import javax.persistence.Temporal
+import javax.persistence.TemporalType
+
 @Data
 @Entity
 class Warehouse {

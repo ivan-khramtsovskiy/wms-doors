@@ -1,4 +1,4 @@
-package ru.edu.asu.wms.wmsdoors.store
+package ru.edu.asu.wms.wmsdoors.Store
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -12,11 +12,11 @@ class StoreService {
     @Autowired
     private StoreRepository storeRepository
 
-    List<Store> getAllProducts() {
+    List<Store> getAllStore() {
         return storeRepository.findAll()
     }
 
-    Store updateProduct(Store val, Integer id) {
+    Store updateStore(Store val, Integer id) {
         Store store = storeRepository.getOne(id)
         store.setContractor(val.getContractor())
         store.setProduct(val.getProduct())
@@ -27,16 +27,16 @@ class StoreService {
         return storeRepository.save(store)
     }
 
-    Store createProduct(Store product) {
-        return storeRepository.save(product)
+    Store createStore(Store store) {
+        return storeRepository.save(store)
     }
 
-    String deleteProduct(Integer id) {
+    String deleteStore(Integer id) {
         storeRepository.deleteById(id)
         return "Сведения удалены"
     }
 
-    Store getProduct(Integer id) {
+    Store getStore(Integer id) {
         return storeRepository.getOne(id)
     }
 

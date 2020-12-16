@@ -1,8 +1,7 @@
-package ru.edu.asu.wms.wmsdoors.store
+package ru.edu.asu.wms.wmsdoors.Store
 
 import lombok.Data
 import ru.edu.asu.wms.wmsdoors.Product.Product
-import ru.edu.asu.wms.wmsdoors.ProductType.ProductType
 import ru.edu.asu.wms.wmsdoors.Warehouse.Warehouse
 import ru.edu.asu.wms.wmsdoors.Сontractor.Contractor
 
@@ -13,8 +12,11 @@ import javax.persistence.*
 @Table(name = "store")
 class Store {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id
+
+    private Integer quantity
+    private Double price
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "contractor_id", nullable = false)
@@ -27,9 +29,6 @@ class Store {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "warehouse_id", nullable = false)
     private Warehouse warehouse
-
-    private Integer quantity
-    private Double price
 
     Store() {
     }
