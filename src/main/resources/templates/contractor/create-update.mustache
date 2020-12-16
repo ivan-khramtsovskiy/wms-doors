@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+{{>fragments/create-edit-header}}
+<div class="container">
+    <div>
+        <form action="{{#isUpdate}}/contractor/update/{{contractor.id}}{{/isUpdate}}{{^isUpdate}}/contractor/create{{/isUpdate}}"
+              name="contractor" method="post">
+            <table class="table">
+                <tbody>
+                <thead>
+                <tr>
+                    <th>Поле</th>
+                    <th>Значение</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#isUpdate}}
+                <tr>
+                    <td>ID</td>
+                    <td><div name="id">{{contractor.id}}</div></td>
+                </tr>
+                {{/isUpdate}}
+                <tr>
+                    <th>Наименование</th>
+                    <td><input class="form-control form-control-sm" type="text" name="name" value="{{#contractor.name}}{{contractor.name}}{{/contractor.name}}" /></td>
+                </tr>
+                <tr>
+                    <th>ИНН</th>
+                    <td><input class="form-control form-control-sm" type="text" name="inn" value="{{#contractor.inn}}{{contractor.inn}}{{/contractor.inn}}" /></td>
+                </tr>
+                <tr>
+                    <th>ОГРН</th>
+                    <td><input class="form-control form-control-sm" type="text" name="ogrn" value="{{#contractor.ogrn}}{{contractor.ogrn}}{{/contractor.ogrn}}" /></td>
+                </tr>
+                <tr>
+                    <th>Контактное лицо</th>
+                    <td><input class="form-control form-control-sm" type="text" name="person" value="{{#contractor.person}}{{contractor.person}}{{/contractor.person}}" /></td>
+                </tr>
+                <tr>
+                    <th>Телефон</th>
+                    <td><input class="form-control form-control-sm" type="text" name="phone" value="{{#contractor.phone}}{{contractor.phone}}{{/contractor.phone}}" /></td>
+                </tr>
+                <tr>
+                    <th>E-mail</th>
+                    <td><input class="form-control form-control-sm" type="text" name="email" value="{{#contractor.email}}{{contractor.email}}{{/contractor.email}}" /></td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </div>
+</div>
+
+{{>fragments/bootstrap-js}}
+</body>
+</html>
