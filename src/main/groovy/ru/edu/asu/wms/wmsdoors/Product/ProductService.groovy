@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import ru.edu.asu.wms.wmsdoors.ProductType.ProductType
+import ru.edu.asu.wms.wmsdoors.ProductType.ProductTypeRepository
 
 @Service
 class ProductService {
@@ -20,7 +21,7 @@ class ProductService {
     Product updateProduct(Product product, Integer id) {
         Product whs = productRepository.getOne(id);
         whs.setName(product.getName());
-        whs.setProductType(whs.getProductType())
+        whs.setProductType(product.getProductType())
         return productRepository.save(whs);
     }
 

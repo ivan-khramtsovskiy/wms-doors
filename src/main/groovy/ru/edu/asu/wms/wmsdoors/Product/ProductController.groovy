@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestParam
 import ru.edu.asu.wms.wmsdoors.ProductType.ProductType
 import ru.edu.asu.wms.wmsdoors.ProductType.ProductTypeService
 import ru.edu.asu.wms.wmsdoors.Warehouse.Warehouse
@@ -28,11 +29,8 @@ class ProductController {
 
     @GetMapping("/product")
     String getAllProducts(Model model) {
-        //TODO Нет реализации
-        ProductType productType = productTypeService.getProductType(1)
-
-        model.addAttribute("product", productService.getByProductType(productType))
-        model.addAttribute("dictionaryHeader", "Типы номенклатуры")
+        model.addAttribute("product", productService.getAllProducts())
+        model.addAttribute("dictionaryHeader", "Номенклатура")
         return "product/list"
     }
 
@@ -52,14 +50,20 @@ class ProductController {
     @GetMapping("/product/update/{id}")
     String updateProductPage(Model model, @PathVariable("id") Integer id) {
         Product product = productService.getProduct(id)
+        List<ProductType> productTypes = productTypeService.getAllProductTypes()
 
+        model.addAttribute("types", productTypes)
+        model.addAttribute("selected", product.productType)
         model.addAttribute("product", product)
         model.addAttribute("isUpdate", true)
         return "product/create-update"
     }
     
     @PostMapping("/product/update/{id}")
-    String createProduct(@ModelAttribute("product") Product product, @PathVariable("id") Integer id) {
+    String createProduct(@ModelAttribute("product") Product product, @PathVariable("id") Integer id, @RequestParam("productType") Integer typeId) {
+        ProductType productType = productTypeService.getProductType(typeId)
+        product.setProductType(productType)
+
         productService.updateProduct(product, id)
         return "redirect:/product"
     }
