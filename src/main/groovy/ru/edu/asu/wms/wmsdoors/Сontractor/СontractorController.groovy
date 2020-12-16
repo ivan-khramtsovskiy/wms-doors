@@ -36,7 +36,15 @@ class СontractorController {
         model.addAttribute("isUpdate", true)
         return "contractor/create-update"
     }
-    
+
+    @GetMapping("/contractor/{id}")
+    String getContractor(Model model, @PathVariable("id") Integer id) {
+        Сontractor contractor = contractorService.getContractor(id)
+        model.addAttribute("contractor", contractor)
+        model.addAttribute("dictionaryHeader", "Сведения о контрагенте")
+        return "contractor/item"
+    }
+
     @PostMapping("/contractor/update/{id}")
     String createContractor(@ModelAttribute("contractor") Сontractor contractor, @PathVariable("id") Integer id) {
         contractorService.updateContractor(contractor, id)
