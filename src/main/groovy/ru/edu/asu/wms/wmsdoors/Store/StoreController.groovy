@@ -24,9 +24,10 @@ class StoreController {
     @Autowired
     ProductService productService
     @Autowired
-    ContractorService contractorService
-    @Autowired
     WarehouseService warehouseService
+    @Autowired
+    ContractorService contractorService
+
 
     @GetMapping("/store/debit")
     String createStorePage(Model model) {
@@ -53,16 +54,7 @@ class StoreController {
 
     @GetMapping("/store/rest")
     String getStoreRest(Model model) {
-
-        List<Map<String, Object>> lmap = storeService.getRest()
-        ArrayList<StoreRest> storeRest = new ArrayList<StoreRest>()
-        for(it in lmap) {
-            StoreRest st = new StoreRest()
-            st.setWarehouse(warehouseService.getWarehouse(it.get("warehouse_id")))
-            st.setProduct(productService.getProduct(it.get("product_id")))
-            st.setQuantity((Integer)it.get("quantity"))
-            storeRest.add(st)
-        }
+        ArrayList<StoreRest> storeRest = storeService.getStoreRest()
 
         model.addAttribute("storeRest", storeRest)
         model.addAttribute("dictionaryHeader", "Остатки на складе")

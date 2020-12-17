@@ -17,6 +17,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-mustache'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.projectlombok:lombok:1.18.16'
+
+	// https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'
+
 	implementation 'org.codehaus.groovy:groovy'
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
