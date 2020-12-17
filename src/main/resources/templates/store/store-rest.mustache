@@ -1,0 +1,39 @@
+<!doctype html>
+<head>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+{{>fragments/dictionary-header}}
+
+<div class="container">
+    <p><br>
+        <a href="/warehouse/create" class="btn btn-primary" role="button">Добавить запись</a>
+    </p>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Наименование</th>
+            <th scope="col">Тип</th>
+            <th scope="col">Склад</th>
+            <th scope="col">Количество</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#storeRest}}
+        <tr>
+            <th scope="row">{{product.name}}</th>
+            <th scope="row">{{product.productType.name}}</th>
+            <td>{{warehouse.address}}</td>
+            <td>{{quantity}}</td>
+        </tr>
+        {{/storeRest}}
+        </tbody>
+    </table>
+</div>
+{{>fragments/bootstrap-js}}
+</body>
+</html>

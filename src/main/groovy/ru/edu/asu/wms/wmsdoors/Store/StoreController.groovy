@@ -10,11 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
 import ru.edu.asu.wms.wmsdoors.Product.Product
 import ru.edu.asu.wms.wmsdoors.Product.ProductService
-import ru.edu.asu.wms.wmsdoors.ProductType.ProductType
 import ru.edu.asu.wms.wmsdoors.Warehouse.Warehouse
 import ru.edu.asu.wms.wmsdoors.Warehouse.WarehouseService
 import ru.edu.asu.wms.wmsdoors.Сontractor.Contractor
-import ru.edu.asu.wms.wmsdoors.Сontractor.ContractorController
 import ru.edu.asu.wms.wmsdoors.Сontractor.ContractorService
 
 @Controller
@@ -51,5 +49,23 @@ class StoreController {
     String createProduct(@ModelAttribute("store") Store store) {
         storeService.createStore(store)
         return "redirect:/store/debit"
+    }
+
+    @GetMapping("/store/rest")
+    String getStoreRest(Model model) {
+
+        List<Map<String, Object>> lmap = storeService.getRest()
+        ArrayList<StoreRest> storeRest = new ArrayList<StoreRest>()
+        for(it in lmap) {
+            StoreRest st = new StoreRest()
+            st.setWarehouse(warehouseService.getWarehouse(it.get("warehouse_id")))
+            st.setProduct(productService.getProduct(it.get("product_id")))
+            st.setQuantity((Integer)it.get("quantity"))
+            storeRest.add(st)
+        }
+
+        model.addAttribute("storeRest", storeRest)
+        model.addAttribute("dictionaryHeader", "Остатки на складе")
+        return "store/store-rest"
     }
 }

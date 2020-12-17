@@ -208,21 +208,11 @@ div[class^="metro"]:hover{
 div[class^="metro"]:active{
 	transform: scale(.98,.98);
 }
+
 .metro-big{width: 200px;}
 .metro-small{width: 95px;}
 .last{margin-right: 0 !important;}
-.Start{
-	color: white;
-	font: normal 50px 'Yanone Kaffeesatz', sans-serif;
-	margin-bottom: 50px;
-  cursor: pointer;
-  user-select: none;
-  display: inline-block;
-  transition: all .3s ease;
-}
-.Start:hover{
-  text-shadow: 0 0 4px white;
-}
+
 .space{
 	margin-bottom: 110px;
 }
@@ -233,28 +223,16 @@ div[class^="metro"]:active{
 	left: 10px;
   user-select: none;
 }
+
 .bottom{bottom: 5px;}
 .top{top: 5px;}
 .chat{background: #df0024;}
-.calendar{
-  background: #00a9ec;
-}
-
+.calendar{background: #00a9ec;}
 .store{background: #ff9000;}
-
 .ie{background: #00abdc;}
-.people{background: #0e5d30;}
 .video{background: #8b0189;}
 .chrome{background: #ce4e4e;}
-.photo{
-  background: url('http://lorempixel.com/200/95/people');
-  background-position: -2px -2px;
-}
-.music{
-  background: #5f5f5f;
-  animation: flip 6s linear infinite;
-  transform: rotateX(0deg);
-}
+.credit{background: #5f5f5f;}
 .games{background: #00ff00;}
 .twitter{background: #19bfe5;}
 .gp{background: #d64136;}
@@ -273,27 +251,15 @@ div[class^="icon"]{
 	margin: 20px auto;
 	background-size: 45px 45px;
 }
-.icon-calendar{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Apps-Calendar-Metro-icon.png');}
-.icon-chat{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Other-Mail-alt-Metro-icon.png');}
-.icon-store{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Microsoft-Store-Metro-icon.png');}
-.icon-ie{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Browsers-Internet-Explorer-10-Metro-icon.png');}
-.icon-people{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Folders-OS-User-No-Frame-Metro-icon.png');}
-.icon-video{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Folders-OS-My-Videos-Metro-icon.png');}
-.icon-chrome{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Browsers-Google-Chrome-Metro-icon.png');}
-.icon-music{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Apps-Google-Music-Metro-icon.png');}
-.icon-games{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Folders-OS-Games-alt-Metro-icon.png');}
-.icon-twitter{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Web-Twitter-alt-2-Metro-icon.png');}
-.icon-gp{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Web-Google-plus-Metro-icon.png');}
-.icon-fb{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Web-Facebook-alt-1-Metro-icon.png');}
-.icon-cnn{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Web-CNN-Metro-icon.png');}
-.icon-ps{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Apps-Adobe-Photoshop-Metro-icon.png');}
-.icon-bt{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Apps-Bluetooth-Metro-icon.png');}
-.icon-cc{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Apps-CCleaner-Metro-icon.png');}
-.icon-wmp{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Apps-Windows-Media-Player-Metro-icon.png');}
-.icon-tube{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-YouTube-alt-1-Metro-icon.png');}
-.icon-skype{background: url('http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/128/Apps-Skype-Metro-icon.png');}
-.icon-excel{background: url('/icons/excel.png');}
-.icon-warehouse{background: url('/icons/warehouse.png');}
+
+.icon-contractor{background: url('/icons/contractor.svg');}
+.icon-product{background: url('/icons/product.svg');}
+.icon-product-type{background: url('/icons/product-type.svg');}
+.icon-report{background: url('/icons/report.svg');}
+.icon-warehouse{background: url('/icons/warehouse.svg');}
+.icon-debit{background: url('/icons/debit.svg');}
+.icon-credit{background: url('/icons/credit.svg');}
+
 ::-webkit-scrollbar{
   width: 10px;
 	height: 10px;

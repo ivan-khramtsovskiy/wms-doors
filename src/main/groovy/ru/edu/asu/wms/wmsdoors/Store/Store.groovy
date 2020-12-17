@@ -1,11 +1,15 @@
 package ru.edu.asu.wms.wmsdoors.Store
 
 import lombok.Data
+import org.hibernate.annotations.CreationTimestamp
 import ru.edu.asu.wms.wmsdoors.Product.Product
 import ru.edu.asu.wms.wmsdoors.Warehouse.Warehouse
 import ru.edu.asu.wms.wmsdoors.Сontractor.Contractor
 
 import javax.persistence.*
+import java.sql.Timestamp
+import java.time.LocalDateTime
+import java.time.ZonedDateTime
 
 @Data
 @Entity
@@ -29,6 +33,17 @@ class Store {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "warehouse_id", nullable = false)
     private Warehouse warehouse
+
+    @CreationTimestamp
+    private LocalDateTime createdAt;
+
+    LocalDateTime getCreatedAt() {
+        return createdAt
+    }
+
+    void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt
+    }
 
     Store() {
     }
