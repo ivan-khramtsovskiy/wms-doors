@@ -258,7 +258,7 @@ div[class^="icon"]{
 .icon-report{background: url('/icons/report.svg');}
 .icon-warehouse{background: url('/icons/warehouse.svg');}
 .icon-debit{background: url('/icons/debit.svg');}
-.icon-credit{background: url('/icons/credit.svg');}
+.icon-invoice{background: url('/icons/invoice.svg');}
 
 ::-webkit-scrollbar{
   width: 10px;
