@@ -25,4 +25,14 @@ class DefaultController {
         model.addAttribute("warehouse", "/warehouse")
         return 'index'
     }
+
+    @GetMapping("/user")
+    String user() {
+        return "User";
+    }
+
+    @GetMapping("/admin")
+    String admin() {
+        return "Admin";
+    }
 }

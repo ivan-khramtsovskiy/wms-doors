@@ -235,7 +235,7 @@ div[class^="metro"]:active{
 .credit{background: #5f5f5f;}
 .games{background: #00ff00;}
 .twitter{background: #19bfe5;}
-.gp{background: #d64136;}
+.gp{background: #562781;}
 .fb{background: #3b5998;}
 .cnn{background: #fe0000;}
 .ps{background: #0c5fa1;}
@@ -259,6 +259,7 @@ div[class^="icon"]{
 .icon-warehouse{background: url('/icons/warehouse.svg');}
 .icon-debit{background: url('/icons/debit.svg');}
 .icon-invoice{background: url('/icons/invoice.svg');}
+.icon-logout{background: url('/icons/logout.svg');}
 
 ::-webkit-scrollbar{
   width: 10px;

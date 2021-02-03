@@ -1,7 +1,7 @@
 app:
   name: WMS-Doors
   title: Дверей дешевле не бывает!
-  author: Фёдоров
+  author: Васюра Ф.
 
 spring:
   jpa:
